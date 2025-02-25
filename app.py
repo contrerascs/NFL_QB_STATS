@@ -1,13 +1,21 @@
 import dash
-from layout.layout import layout  # Importamos el layout de la interfaz
-  # Importamos los callbacks para la interactividad
+import dash_bootstrap_components as dbc
+from dash import html, dcc
+from components.layout import layout
+from components.callbacks import register_callbacks
 
-# Inicializar la app
-app = dash.Dash(__name__)
+# Inicializar la aplicación Dash
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.DARKLY])
 
-# Usar el layout definido en layout.py
-app.layout = layout
+# Establecer el layout de la aplicación
+app.layout = html.Div([
+    dcc.Store(id='theme-store', data='darkly'),  # Almacenar el tema actual
+    layout,
+    dbc.Button("Cambiar Tema", id='theme-toggle', className="mt-3")
+])
 
-# Ejecutar el servidor
-if __name__ == "__main__":
-    app.run_server(debug=True)
+# Registrar los callbacks
+register_callbacks(app)
+
+if __name__ == '__main__':
+    app.run_server(debug=False)

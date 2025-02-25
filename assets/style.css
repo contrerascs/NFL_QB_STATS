@@ -1,0 +1,21 @@
+/* Cambiar el color del texto en los dropdowns */
+.Select-control, .Select-menu-outer {
+    background-color: #343a40 !important;
+    color: white !important;
+}
+
+.Select-value-label, .Select-placeholder {
+    color: white !important;
+}
+
+/* Cambiar el color del borde del dropdown */
+.Select-control {
+    border: 1px solid #6c757d !important;
+}
+
+/* Cambiar el color del texto en los inputs */
+.dash-bootstrap .form-control {
+    background-color: #343a40 !important;
+    color: white !important;
+    border: 1px solid #6c757d !important;
+}
