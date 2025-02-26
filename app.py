@@ -17,5 +17,8 @@ app.layout = html.Div([
 # Registrar los callbacks
 register_callbacks(app)
 
+# Gunicorn necesita un objeto WSGI, que en Dash se obtiene con 'app.server'
+server = app.server
+
 if __name__ == '__main__':
     app.run_server(debug=False)
