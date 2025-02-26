@@ -8,7 +8,7 @@ jugadores = get_unique_players(df)
 
 # Definir el layout de la aplicación
 layout = dbc.Container([
-    html.H1("NFL QB Dashboard", id='title', className="text-center my-4"),
+    html.H1("NFL QB STATS", id='title', className="text-center my-4"),
     
     dbc.Row([
         dbc.Col(
