@@ -17,5 +17,8 @@ app.layout = html.Div([
 # Registrar los callbacks
 register_callbacks(app)
 
+# Configurar el servidor para Render
+server = app.server
+
 if __name__ == '__main__':
     app.run_server(host='0.0.0.0', port=8050)
